@@ -1,0 +1,7 @@
+target/
+.idea/
+.tmp_inspect/
+.codegraph/
+.claude/
+output*/
+*.log

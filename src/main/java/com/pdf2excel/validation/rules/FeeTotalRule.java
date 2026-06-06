@@ -31,8 +31,6 @@ public class FeeTotalRule implements ValidationRule {
 
         BigDecimal sum = BigDecimal.ZERO;
         for (FeeDetail d : details) {
-            // 当前解析器稳定提取的是主电费与容量费；其余费用列尚未可靠拆出，
-            // 校验口径先与当前解析结果保持一致，避免把未确认字段重复计入。
             if (d.getFee() != null) sum = sum.add(d.getFee());
             if (d.getCapacityFee() != null) sum = sum.add(d.getCapacityFee());
         }
@@ -48,7 +46,7 @@ public class FeeTotalRule implements ValidationRule {
             if (pct.compareTo(new BigDecimal("1")) > 0) {
                 result.addError(msg);
             } else {
-                result.addWarning(msg);
+                result.addWarning(msg + "，小于等于1%，通常为表头本期电费与逐户明细费用口径差异");
             }
         }
     }

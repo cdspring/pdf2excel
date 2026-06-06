@@ -66,6 +66,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.pdf2excel.Pdf2ExcelCliApplication</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
             </plugin>
         </plugins>
     </build>
