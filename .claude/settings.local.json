@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvn compile *)",
+      "Bash(git -C /d/pdf2excel status --short)",
+      "Bash(java -cp \"D:/pdf2excel/target/pdf2excel-1.0.0.jar\" -Dloader.main=com.pdf2excel.PdfTextDumper org.springframework.boot.loader.PropertiesLauncher \"D:/pdf2excel/2026.3月电信集团户账单明细\\(1\\).pdf\" 9 12)",
+      "Bash(grep -n -A35 -B5 '^ *[0-9]\\\\+: 86$')"
+    ]
+  }
+}
